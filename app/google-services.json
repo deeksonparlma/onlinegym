@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "298223349717",
+    "firebase_url": "https://onlinegym-c01be.firebaseio.com",
+    "project_id": "onlinegym-c01be",
+    "storage_bucket": "onlinegym-c01be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298223349717:android:a316c3321bb03447",
+        "android_client_info": {
+          "package_name": "com.epicodus.gym"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298223349717-0hu85vk6hgmk64bkls706jt73bjfouva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.epicodus.gym",
+            "certificate_hash": "3ae28e4a372174833dcb464d0bb47a1188ad07c1"
+          }
+        },
+        {
+          "client_id": "298223349717-gec37v76phocibdab8i131eeipjt76an.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuDJ6uWA_FNt3GiQ3MChb6Q-ir_am3yg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298223349717-gec37v76phocibdab8i131eeipjt76an.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
