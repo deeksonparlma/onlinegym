@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="650dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/home"
+    tools:context=".Home">
+
+    <TextView
+        android:id="@+id/trainers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="564dp"
+        android:layout_marginBottom="28dp"
+        android:text="Trainers"
+        android:textColor="#000" />
+
+    <ImageView
+        android:id="@+id/trainers2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="573dp"
+        android:layout_marginBottom="59dp"
+        app:srcCompat="@drawable/assistant" />
+
+    <ImageView
+        android:id="@+id/equipment"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="452dp"
+        android:layout_marginBottom="61dp"
+        app:srcCompat="@drawable/run" />
+
+    <ImageView
+        android:id="@+id/price"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="331dp"
+        android:layout_marginBottom="61dp"
+        app:srcCompat="@drawable/money" />
+
+    <TextView
+        android:id="@+id/equipment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="423dp"
+        android:layout_marginBottom="28dp"
+        android:text="Cool equipment"
+        android:textColor="#000"
+        tools:text="cool equipment" />
+
+    <TextView
+        android:id="@+id/price2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="301dp"
+        android:layout_marginBottom="29dp"
+        android:text="Affordable prices"
+        android:textColor="#000"
+        tools:text="Affordable prices" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="230dp"
+        android:layout_height="380dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="401dp"
+        android:layout_marginBottom="178dp">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="176dp"
+            android:hint="Email" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="235dp"
+            android:hint="password" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="285dp"
+            android:text="Log in"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="346dp"
+            android:text="Don't have an account ? Sign Up"
+            android:textColor="#B9C8FD"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/login2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="90dp"
+            android:text="Log in"
+            android:fontFamily="@font/capture_it"
+            android:textColor="#000"
+            android:textSize="30sp" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
