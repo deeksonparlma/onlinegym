@@ -27,8 +27,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.email) EditText mEmail;
@@ -130,11 +133,30 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                         String password1 = mPassword1.getText().toString();
                         String phone1 =mPhone.getText().toString();
                         String Array = "username :"+ " "+username1 +"  "+" Email :"+" "+email1 +"  "+" Password :"+" "+  password1 +" " +" Phone :"+" "+phone1;
-                        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users").child(username1);
-                        myRef.setValue(Array);
-                        Intent intent = new Intent(Home.this, HomeScreen.class);
-                        startActivityForResult(intent, 0);
-                        finish();
+                        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users");
+                        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot snapshot) {
+                                if (snapshot.hasChild(username1)) {
+                                    mUsername.setError("Username already exists");
+                                }
+                                else{
+                                    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users").child(username1);
+                                    myRef.setValue(Array);
+                                    Intent intent = new Intent(Home.this, HomeScreen.class);
+                                    startActivityForResult(intent, 0);
+                                    finish();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+
+
                     }
                 });
             }
