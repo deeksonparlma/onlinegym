@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.ByteArrayOutputStream;
+
 public class Home extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.email) EditText mEmail;
     @BindView(R.id.password) EditText mPassword;
@@ -49,7 +52,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.password2) EditText mPassword2;
     @BindView(R.id.phone) EditText mPhone;
     @BindView(R.id.signup1) Button mSignUpNow;
-
+    private Bitmap mPic;
     private FirebaseAuth mAuth;
     private static final int REQUEST_IMAGE_CAPTURE = 111;
 @Override
@@ -63,8 +66,25 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         mProfile.setOnClickListener(this);
         mSignUpNow.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser == null){
+            Toast.makeText(Home.this, "Register",
+                    Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Intent intent = new Intent(Home.this,HomeScreen.class);
+            startActivity(intent);
+        }
     }
-
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser == null){
+//
+//        };
+//    }
     @Override
     public void onClick(View v) {
     if(v == mLogin){
@@ -141,8 +161,16 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                                     mUsername.setError("Username already exists");
                                 }
                                 else{
+                                    Bitmap pic = mPic;
+                                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                                    pic.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                                    String imageEncoded = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
                                     DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users").child(username1);
-                                    myRef.setValue(Array);
+                                    myRef.child("username").setValue(username1);
+                                    myRef.child("Email").setValue(email1);
+                                    myRef.child("phone").setValue(phone1);
+                                    myRef.child("password").setValue(password1);
+                                    myRef.child("image").setValue(imageEncoded);
                                     Intent intent = new Intent(Home.this, HomeScreen.class);
                                     startActivityForResult(intent, 0);
                                     finish();
@@ -176,9 +204,12 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             mProfile.setImageBitmap(imageBitmap);
-//            encodeBitmapAndSaveToFirebase(imageBitmap);
+            mPic =imageBitmap;
         }
     }
+
+
+
     @Override
     public void onStart() {
         super.onStart();
