@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#5D4C70"
-    tools:context=".HomeFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text=".@deekson"
+        android:paddingStart="10dp"
+        android:textColor="#99C6F2"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:text="a day in the gym"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/gym"
+        />
+
+    <TextView
+        android:id="@+id/usernamePost"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text=".@Mary"
+        android:paddingStart="10dp"
+        android:textColor="#99C6F2"
+        />
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:text="Awesome experince at the gym"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:background="@drawable/poster"/>
-
-</FrameLayout>
+        android:id="@+id/postImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/gym2"
+        />
+</LinearLayout>

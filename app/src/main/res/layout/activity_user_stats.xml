@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.userStats"
+    android:background="#5D4C70">
+    <LinearLayout
+        android:layout_width="450dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/feature">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The ultimate Fitness gym"
+            android:fontFamily="@font/capture_it"
+            android:textSize="20dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="90dp"
+            android:layout_marginStart="40dp"/>
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:text="LogOut"
+            android:textSize="5dp" />
+
+
+    </LinearLayout>
+
+    <!--<fragment-->
+        <!--android:id="@+id/fragment2"-->
+        <!--android:name="com.epicodus.gym.Fragments.statsFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginTop="160dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginBottom="0dp" />-->
+    <TextView
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="280dp"
+        android:layout_marginBottom="483dp"
+        android:background="@drawable/roundtextview"
+        android:paddingStart="10dp"
+        android:paddingTop="20dp"
+        android:text="Home"
+        android:textColor="#ffff"
+        android:textSize="15dp" />
+    <TextView
+        android:id="@+id/stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="481dp"
+        android:background="@drawable/roundtextview"
+        android:paddingStart="10dp"
+        android:paddingTop="20dp"
+        android:text="Stats"
+        android:textColor="#A460F1"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/liveGym"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="480dp"
+        android:background="@drawable/roundtextview"
+        android:paddingStart="5dp"
+        android:paddingTop="20dp"
+        android:text="LiveGym"
+        android:textColor="#ffff"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/usernameStat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="191dp"
+        android:fontFamily="@font/capture_it"
+        android:textColor="#fff"
+        android:layout_marginBottom="350dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/emailstats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="419dp"
+        android:fontFamily="@font/capture_it"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="390dp"
+        android:fontFamily="@font/capture_it"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/profilestat"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="163dp"
+        android:background="@drawable/img"
+        android:layout_marginBottom="358dp"
+        android:visibility="gone"
+         />
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="273dp"
+        android:layout_marginBottom="373dp"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:background="@drawable/percent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="229dp"
+        android:fontFamily="@font/capture_it"
+        android:paddingStart="20dp"
+        android:text="This week's Analysis :"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="287dp"
+        android:layout_marginBottom="75dp"
+        android:fontFamily="@font/capture_it"
+        android:text="20 Coins"
+        android:textColor="#000"
+        android:textSize="20sp" />
+</RelativeLayout>
